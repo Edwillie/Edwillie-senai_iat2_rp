@@ -1,0 +1,30 @@
+# Reconhecimento de Padrões — Aula 3
+# Extração de Atributos em Áudio Industrial
+# Autor: Orlando Rosa Junior
+#
+# Instalação:
+#   pip install -r requirements_aula3.txt
+#
+# Compatibilidade:
+#   Python 3.10 → 100% compatível
+#   Python 3.11 → 100% compatível
+#   Python 3.12 → 100% compatível
+#   Python 3.13 → 100% compatível
+#   Python 3.14 → sem suporte oficial ainda
+#
+# Para verificar sua versão: python --version
+
+# ── Já instalados nas Aulas 1 e 2 ────────────────────────────────────────────
+numpy>=1.26
+matplotlib>=3.7
+scikit-learn>=1.3
+
+# ── Instalado na Aula 2 ───────────────────────────────────────────────────────
+scikit-image>=0.21
+
+# ── Novo na Aula 3 ────────────────────────────────────────────────────────────
+# Análise e extração de atributos em sinais de áudio
+librosa>=0.10
+
+# Dependência do librosa para leitura de arquivos WAV
+soundfile>=0.12
