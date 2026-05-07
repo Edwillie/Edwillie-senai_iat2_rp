@@ -66,5 +66,49 @@ for j, (nome, cor) in enumerate(zip(NOMES, cores)):
 eixos[-1].set_xlabel("Tempo (s)")
 plt.show()
 
+# Inserir a extracao usando ZCR/RMS
 
+JANELA =2048
+SALTO = 512
 
+def extrairZCR(sinal):
+    zcr = librosa.feature.zero_crossing_rate(sinal, frame_length=JANELA, hop_length=SALTO)[0]
+
+    return zcr #np.array([zcr.mean(), zcr.std(), zcr.max(), zcr.min()])
+
+atributosZCR = np.array([extrairZCR(s) for s in sinais])
+
+fig, eixos = plt.subplots(3, 1, figsize=(12,7), sharex=True)
+fig.suptitle("ZCR do Sinal de áudio", fontsize=14)
+
+for j, (nome, cor) in enumerate(zip(NOMES, cores)):
+    idClasse = np.where(rotulos == j)[0][0]
+    zcr = atributosZCR[j]
+    eixos[j].plot(zcr, color=cor, linewidth=1)
+    eixos[j].set_ylabel(nome, fontsize=10)
+    eixos[j].grid(True, alpha=0.3)
+
+eixos[-1].set_xlabel("Janela")
+plt.tight_layout()
+plt.show()
+
+def extrairRMS(sinal):
+    rms = librosa.feature.rms(y=sinal, frame_length=JANELA, hop_length=SALTO)[0]
+
+    return rms #np.array([rms.mean(), rms.std(), rms.max(), rms.min()])
+
+atributosRMS = np.array([extrairRMS(s) for s in sinais])
+
+fig, eixos = plt.subplots(3, 1, figsize=(12,7), sharex=True)
+fig.suptitle("RMS do Sinal de áudio", fontsize=14)
+
+for j, (nome, cor) in enumerate(zip(NOMES, cores)):
+    idClasse = np.where(rotulos == j)[0][0]
+    rms = atributosRMS[j]
+    eixos[j].plot(rms, color=cor, linewidth=1)
+    eixos[j].set_ylabel(nome, fontsize=10)
+    eixos[j].grid(True, alpha=0.3)
+
+eixos[-1].set_xlabel("Janela")
+plt.tight_layout()
+plt.show()

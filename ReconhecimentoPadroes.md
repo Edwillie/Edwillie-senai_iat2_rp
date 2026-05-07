@@ -14,5 +14,5 @@ Objetivos:
 > Extração de dados
 1.Imagens (OpenCV)
 2.Audio (Série temporal)
-----> ZCR
-----> RMS
+----> ZCR = Zero Crossing Rate
+----> RMS = Root mean square (Amplitudes) = Raiz Quadrada da soma de amplitudes ao quadrado divido pela quantidade de elementos
