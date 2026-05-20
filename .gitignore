@@ -1,5 +1,7 @@
 *.zip
 *.wav
 
+
 \BLDC
 \.venv
+\dados_usuarios
