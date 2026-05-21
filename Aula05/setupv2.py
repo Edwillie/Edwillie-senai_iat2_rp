@@ -64,8 +64,8 @@ def criarUsuario():
 
             cv2.imshow("Cadastro de Usuario", frame)
 
-            if cv2.waitKey(10) & 0xFF == ord('q'):
-                break
+        if cv2.waitKey(10) & 0xFF == ord('q'):
+            break
 
     cap.release()
     cv2.destroyAllWindows()
